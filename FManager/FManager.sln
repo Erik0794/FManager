@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FManager", "FManager.csproj", "{75ED7934-5CEE-4381-A5EC-0B09C362DDCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FLogin", "..\FLogin\FLogin.csproj", "{D51EC06C-9F24-4AF3-8433-46CC5DFAB421}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FAdmin", "..\FAdmin\FAdmin.csproj", "{C8E1A15A-D79B-4EC7-9A1B-3C971C3885B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75ED7934-5CEE-4381-A5EC-0B09C362DDCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75ED7934-5CEE-4381-A5EC-0B09C362DDCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75ED7934-5CEE-4381-A5EC-0B09C362DDCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75ED7934-5CEE-4381-A5EC-0B09C362DDCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51EC06C-9F24-4AF3-8433-46CC5DFAB421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51EC06C-9F24-4AF3-8433-46CC5DFAB421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51EC06C-9F24-4AF3-8433-46CC5DFAB421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51EC06C-9F24-4AF3-8433-46CC5DFAB421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E1A15A-D79B-4EC7-9A1B-3C971C3885B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E1A15A-D79B-4EC7-9A1B-3C971C3885B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E1A15A-D79B-4EC7-9A1B-3C971C3885B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E1A15A-D79B-4EC7-9A1B-3C971C3885B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
