@@ -1,0 +1,9 @@
+C:\Users\Erik Klint\Google Drev\Programming\FLogin\bin\Release\FLogin.exe.config
+C:\Users\Erik Klint\Google Drev\Programming\FLogin\bin\Release\FLogin.exe
+C:\Users\Erik Klint\Google Drev\Programming\FLogin\bin\Release\MySql.Data.dll
+C:\Users\Erik Klint\Google Drev\Programming\FLogin\bin\Release\MySql.Data.Entity.dll
+C:\Users\Erik Klint\Google Drev\Programming\FLogin\bin\Release\MySql.Data.xml
+C:\Users\Erik Klint\Google Drev\Programming\FLogin\obj\Release\FLogin.csprojResolveAssemblyReference.cache
+C:\Users\Erik Klint\Google Drev\Programming\FLogin\obj\Release\FManager.LoginForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\FLogin\obj\Release\FLogin.csproj.GenerateResource.Cache
+C:\Users\Erik Klint\Google Drev\Programming\FLogin\obj\Release\FLogin.exe
