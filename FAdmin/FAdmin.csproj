@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{C8E1A15A-D79B-4EC7-9A1B-3C971C3885B1}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FAdmin</RootNamespace>
+    <AssemblyName>FAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="MySql.Data" />
+    <Reference Include="MySql.Data.Entity" />
+    <Reference Include="MySql.Web" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration\AdminForm.cs" />
+    <Compile Include="Administration\AdminForm.Designer.cs" />
+    <Compile Include="Administration\ClientEditForm.cs" />
+    <Compile Include="Administration\ClientEditForm.Designer.cs" />
+    <Compile Include="Administration\EmployeeCreateForm.cs" />
+    <Compile Include="Administration\EmployeeCreateForm.Designer.cs" />
+    <Compile Include="Administration\EmployeeEditForm.cs" />
+    <Compile Include="Administration\EmployeeEditForm.Designer.cs" />
+    <Compile Include="Administration\EmployeeFiredForm.cs" />
+    <Compile Include="Administration\EmployeeFiredForm.Designer.cs" />
+    <Compile Include="Administration\EmployeeRosterForm.cs" />
+    <Compile Include="Administration\EmployeeRosterForm.Designer.cs" />
+    <Compile Include="Administration\StatisticsForm.cs" />
+    <Compile Include="Administration\StatisticsForm.Designer.cs" />
+    <Compile Include="Administration\UserMakeForm.cs" />
+    <Compile Include="Administration\UserMakeForm.Designer.cs" />
+    <Compile Include="Clients\AddressAdd.cs" />
+    <Compile Include="Clients\AddressAdd.Designer.cs" />
+    <Compile Include="Clients\AddressEditor.cs" />
+    <Compile Include="Clients\AddressEditor.Designer.cs" />
+    <Compile Include="Clients\Afhentning.cs" />
+    <Compile Include="Clients\Afhentning.Designer.cs" />
+    <Compile Include="Clients\SBAdd.cs" />
+    <Compile Include="Clients\SBAdd.Designer.cs" />
+    <Compile Include="Clients\SBAdresser.cs" />
+    <Compile Include="Clients\SBAdresser.Designer.cs" />
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Administration\StatisticsForm.Designer.cs.bak" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Administration" />
+    <Folder Include="Clients" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Administration\AdminForm.resx" />
+    <EmbeddedResource Include="Administration\ClientEditForm.resx" />
+    <EmbeddedResource Include="Administration\EmployeeCreateForm.resx" />
+    <EmbeddedResource Include="Administration\EmployeeEditForm.resx" />
+    <EmbeddedResource Include="Administration\EmployeeFiredForm.resx" />
+    <EmbeddedResource Include="Administration\EmployeeRosterForm.resx" />
+    <EmbeddedResource Include="Administration\StatisticsForm.resx" />
+    <EmbeddedResource Include="Administration\UserMakeForm.resx" />
+    <EmbeddedResource Include="Clients\AddressAdd.resx" />
+    <EmbeddedResource Include="Clients\AddressEditor.resx" />
+    <EmbeddedResource Include="Clients\Afhentning.resx" />
+    <EmbeddedResource Include="Clients\SBAdd.resx" />
+    <EmbeddedResource Include="Clients\SBAdresser.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
