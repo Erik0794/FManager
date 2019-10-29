@@ -1,0 +1,56 @@
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\bin\Release\Fragmentum Manager.exe.config
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\bin\Release\Fragmentum Manager.exe
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.LoginForm.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.MainForm.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.Views.Afhentning.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.Views.Indmelding.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.Views.SBAdresser.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.Views.Slutbruger.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.csproj.GenerateResource.Cache
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\Fragmentum Manager.exe
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.csprojResolveAssemblyReference.cache
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.Views.Pause.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.Views.Medico.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\bin\Release\MySql.Data.dll
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\bin\Release\MySql.Data.Entity.dll
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\bin\Release\MySql.Data.xml
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.Views.Deleteform.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.Menus.SelectionMenu.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.TestViews.LaptopTest.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.TestViews.DesktopTest.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.TestViews.PrinterTest.resources
+D:\Libraries\Documents\SharpDevelop Projects\Fragmentum\obj\Release\FManager.TestViews.ScreenTest.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\bin\Release\Fragmentum Manager.exe.config
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\bin\Release\Fragmentum Manager.exe
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\bin\Release\MySql.Data.dll
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\bin\Release\MySql.Data.Entity.dll
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\bin\Release\MySql.Data.xml
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.csprojResolveAssemblyReference.cache
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.ExitForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.LoginForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.MainForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.Menus.SelectionMenu.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.TestViews.LaptopTest.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.TestViews.DesktopTest.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.TestViews.PrinterTest.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.TestViews.ScreenTest.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.Views.Deleteform.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.Views.Indlevering.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.Views.Indmelding.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.Views.Medico.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.Views.Pause.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FManager.csproj.GenerateResource.Cache
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\Fragmentum Manager.exe
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Administration.AdminForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Administration.EmployeeEditForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Administration.EmployeeFiredForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Administration.EmployeeCreateForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Administration.EmployeeRosterForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Administration.StatisticsForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Administration.ClientEditForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Administration.UserMakeForm.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Clients.AddressAdd.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Clients.AddressEditor.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Clients.Afhentning.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Clients.SBAdd.resources
+C:\Users\Erik Klint\Google Drev\Programming\Fragmentum\obj\Release\FAdmin.Clients.SBAdresser.resources

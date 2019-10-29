@@ -1,0 +1,8 @@
+C:\Users\DemiGod\Documents\SharpDevelop Projects\WinForm\WinForm\obj\Debug\WinForm.csprojResolveAssemblyReference.cache
+C:\Users\DemiGod\Documents\SharpDevelop Projects\WinForm\WinForm\obj\Debug\WinForm.LoginForm.resources
+C:\Users\DemiGod\Documents\SharpDevelop Projects\WinForm\WinForm\obj\Debug\WinForm.csproj.GenerateResource.Cache
+C:\Users\DemiGod\Documents\SharpDevelop Projects\WinForm\WinForm\bin\Debug\WinForm.exe.config
+C:\Users\DemiGod\Documents\SharpDevelop Projects\WinForm\WinForm\bin\Debug\WinForm.exe
+C:\Users\DemiGod\Documents\SharpDevelop Projects\WinForm\WinForm\bin\Debug\WinForm.pdb
+C:\Users\DemiGod\Documents\SharpDevelop Projects\WinForm\WinForm\obj\Debug\WinForm.exe
+C:\Users\DemiGod\Documents\SharpDevelop Projects\WinForm\WinForm\obj\Debug\WinForm.pdb

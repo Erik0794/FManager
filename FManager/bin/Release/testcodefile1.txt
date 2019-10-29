@@ -1,0 +1,22 @@
+		private void loadtypeinfo()
+		{
+			ConnectionStringSettings mcons = ConfigurationManager.ConnectionStrings["MySql"];
+			string mcs = mcons.ConnectionString;
+			using(mcon = new MySqlConnection(mcs))
+			{
+				using(DataSet ds = new DataSet())
+				{
+					const string query = "SELECT @place FROM `adm_lager`.`itemtypes`";
+					DataTable dt = new DataTable();
+					ds.Tables.Add(dt);
+					MySqlCommand mcmd = new MySqlCommand();
+					mcmd.Connection = mcon;
+					mcmd.CommandText = query;
+					mcmd.Parameters.AddWithValue("@place", placemenu.Text);
+					mcmd.CommandType = CommandType.Text;
+					MySqlDataAdapter mda = new MySqlDataAdapter(mcmd);
+					mda.Fill(dt);
+					dataGridView1.DataSource = dt;
+				}
+			}
+		}
