@@ -1,0 +1,14 @@
+C:\ISV_Donwload\ZMotifSDK_CSharp_CardPrinting_SA\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.csproj.ResolveComReference.cache
+C:\ISV_Donwload\ZMotifSDK_CSharp_CardPrinting_SA\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.exe
+C:\ISV_Donwload\ZMotifSDK_CSharp_CardPrinting_SA\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.pdb
+C:\ISV_Donwload\SA_249\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.csproj.ResolveComReference.cache
+C:\ISV_Donwload\SA_249\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.exe
+C:\ISV_Donwload\SA_249\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.pdb
+C:\ISV_Donwload\SA_249\ZXPSampleCode\ZXPSampleCode\obj\Debug\ResolveAssemblyReference.cache
+C:\ISV_Donwload\SA_249\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.frmMain.resources
+C:\ISV_Donwload\SA_249\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.frmMultiPrint.resources
+C:\ISV_Donwload\SA_249\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.Properties.Resources.resources
+C:\ISV_Donwload\SA_249\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.csproj.GenerateResource.Cache
+C:\Users\Erik Klint\Google Drev\Programming\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.csprojResolveAssemblyReference.cache
+C:\Users\Erik Klint\Google Drev\Programming\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.exe
+C:\Users\Erik Klint\Google Drev\Programming\ZXPSampleCode\ZXPSampleCode\obj\Debug\ZXPSampleCode.pdb

@@ -1,0 +1,3702 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZMotifGraphics</name>
+    </assembly>
+    <members>
+        <member name="T:ZMTGraphics.IZMotifGraphics">
+            <summary>
+            Interface for ZMTGraphics
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.GetSDKVersion(System.Byte@,System.Byte@,System.Byte@,System.Byte@)">
+            <summary>
+            Returns the version of the dll
+            </summary>
+            <param name="major">Major component of version</param>
+            <param name="minor">Minor component of version</param>
+            <param name="build">Build component of version</param>
+            <param name="revision">Revision component of version</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.GetSDKProductVersion(System.String@)">
+            <summary>
+            Returns the product version
+            </summary>
+            <param name="productVersion"></param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.InitGraphics(System.Int32,System.Int32,ZMTGraphics.ZMotifGraphics.ImageOrientationEnum,ZMTGraphics.ZMotifGraphics.RibbonTypeEnum,System.Int32)">
+            <summary>
+            Initializes the drawing surface
+            </summary>
+            <param name="maxWidth">maximum width of the drawing surface</param>
+            <param name="maxHeight">maximum height of the drawing surface</param>
+            <param name="imgOrientation">image orientation</param>
+            <param name="ribType">ribbon type to be used when printing this image</param>
+            <param name="fillColor">background fill color</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.InitGraphics(System.Int32,System.Int32,ZMTGraphics.ZMotifGraphics.ImageOrientationEnum,ZMTGraphics.ZMotifGraphics.RibbonTypeEnum)">
+            <summary>
+            Initializes the drawing surface
+            </summary>
+            <param name="maxWidth">maximum width of the drawing surface</param>
+            <param name="maxHeight">maximum height of the drawing surface</param>
+            <param name="imgOrientation">image orientation</param>
+            <param name="ribType">ribbon type to be used when printing this image</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.ClearGraphics">
+            <summary>
+            Clears all drawing buffers and restores default values
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.CloseGraphics">
+            <summary>
+            Close ZMTGraphics and clean-up
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.CreateBitmap(System.Int32@)">
+            <summary>
+            Returns byte[] containing image data created based on user selections
+            </summary>
+            <param name="dataLen">length of image data byte[]</param>
+            <returns>byte[] containing image data</returns>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.SharpenImage(System.Byte[]@,System.Int32)">
+            <summary>
+            Performs sharpening on user supplied image data
+            </summary>
+            <param name="imageData">byte[] containing sharpened image data</param>
+            <param name="level">0 to 100</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.AdjustBrightness(System.Int32)">
+            <summary>
+            Adjusts the images overall brightness level
+            </summary>
+            <param name="brightnessLevel">-25 to 25</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.AdjustContrast(System.Int32)">
+            <summary>
+            Adjusts the overall contrast level of the image
+            </summary>
+            <param name="contrastLevel">-25 to 25</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.AdjustColorScale(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adjusts the contrast level for red, green, and blue colors
+            </summary>
+            <param name="redLevel">-25 to 25</param>
+            <param name="greenLevel">-25 to 25</param>
+            <param name="blueLevel">-25 to 25</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.AdjustSaturation(System.Int32)">
+            <summary>
+            Adjusts the saturation level of the image
+            </summary>
+            <param name="saturationLevel">-25 to 25</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.RotateHue(System.Single)">
+            <summary>
+            Performs color hue rotation
+            </summary>
+            <param name="rotation">0 to 360</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.SetBlackExtractionLevels(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adjust RGB levels used for black data extraction.
+            All values are from 0 to 5.
+            </summary>
+            <param name="red">Offset value for red pixels</param>
+            <param name="green">Offset value for green pixels</param>
+            <param name="blue">Offset value for blue pixels</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.ExtractBlackData(System.Byte[]@,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            Extract black image data from a given image.
+            </summary>
+            <param name="imageData">Original image</param>
+            <param name="colorImg">Color image data</param>
+            <param name="blackImg">Mono 1bpp image data</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.AdjustGamma(System.Int32)">
+            <summary>
+            Sets the gamma correction level
+            </summary>
+            <param name="level">Gamma correction level (-25 to 25)</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.ConvertToGrayScale(System.Single)">
+            <summary>
+            Converts the image to grayscale
+            </summary>
+            <param name="scaleFactor">0.1 to 1</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.SaveImageProfile(System.String)">
+            <summary>
+            Saves user configured color profile
+            </summary>
+            <param name="profilePath">full path to save the profile to (*.xml)</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.LoadImageProfile(System.String)">
+            <summary>
+            Loads user saved color profile
+            </summary>
+            <param name="profilePath">full path to color profile (*.xml)</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.ImageFileToByteArray(System.String)">
+            <summary>
+            Converts image file to byte array
+            </summary>
+            <param name="filename">full path to image file</param>
+            <returns>image data byte[]</returns>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.ImageFromByteArray(System.Byte[]@)">
+            <summary>
+            Converts bitmap data into a bitmap image
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <returns>bitmap image</returns>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.IPictureFromByteArray(System.Byte[]@)">
+            <summary>
+            Converts bitmap image data into VB6 compatible IPicture object
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <returns>IPicture object</returns>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.IntegerFromColor(System.Drawing.Color)">
+            <summary>
+            Converts color object to integer value
+            </summary>
+            <param name="color">color object</param>
+            <returns>color's integer value</returns>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.IntegerFromColorName(System.String)">
+            <summary>
+            Converts color name to integer value
+            </summary>
+            <param name="colorName">name of color</param>
+            <returns>integer value of color</returns>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawEllipse(System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>
+            Draws an elipse into a specified rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">height of rectangle</param>
+            <param name="thickness">line thickness of ellipse</param>
+            <param name="color">line color of ellipse</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawFillEllipse(System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>
+            Draws an elipse into a specified rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">height of rectangle</param>
+            <param name="fillColor">fill color of ellipse</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawImage(System.Byte[]@,System.Single,System.Single,System.Int32,System.Int32,System.Single)">
+            <summary>
+            Draws an image to user specified coordinates
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="imgWidth">image width</param>
+            <param name="imgHeight">image height</param>
+            <param name="opacity">image opacity (0 to 100)</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawImage(System.Byte[]@,System.Single,System.Single,System.Int32,System.Int32,System.Single,System.Int32,System.Int32)">
+            <summary>
+            Draws an image to user specified coordinates
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="imgWidth">image width</param>
+            <param name="imgHeight">image height</param>
+            <param name="opacity">image opacity (0 to 100)</param>
+            <param name="transparencyColorLow">color to make transparent</param>
+            <param name="transparencyColorHigh">color to make transparent</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawImage(System.Byte[]@,ZMTGraphics.ZMotifGraphics.ImagePositionEnum,System.Int32,System.Int32,System.Single)">
+            <summary>
+            Draws image to user specified location
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <param name="position">position to draw the image to</param>
+            <param name="imgWidth">image width</param>
+            <param name="imgHeight">image height</param>
+            <param name="opacity">image opacity (0 to 100)</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawLine(System.Single,System.Single,System.Single,System.Single,System.Int32,System.Single)">
+            <summary>
+            Draws a line
+            </summary>
+            <param name="x1">x-offset starting point</param>
+            <param name="y1">y-offset starting point</param>
+            <param name="x2">x-offset end point</param>
+            <param name="y2">y-offset end point</param>
+            <param name="color">line color</param>
+            <param name="thickness">line thickness</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>
+            Draws a rectangle
+            </summary>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">heigth of rectangle</param>
+            <param name="thickness">line thickness of rectangle</param>
+            <param name="color">line color of rectangle</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawFillRectangle(System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>
+            Draws a color filled rectangle
+            </summary>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">heigth of rectangle</param>
+            <param name="fillColor">fill color of rectangle</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawTextString(System.Single,System.Single,System.Single,ZMTGraphics.ZMotifGraphics.TextAlignmentEnum,System.String,System.String,System.Single,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Int32)">
+            <summary>
+            Draws text to user specified coordinates
+            </summary>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="angle">text rotation</param>
+            <param name="alignment">text alignment</param>
+            <param name="text">text to draw</param>
+            <param name="font">font type</param>
+            <param name="fontSize">font size</param>
+            <param name="fontStyle">font style</param>
+            <param name="color">font color</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawTextString(System.Single,System.Single,System.String,System.String,System.Single,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Int32)">
+            <summary>
+            Draws text to user specified coordinates
+            </summary>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="text">text to draw</param>
+            <param name="font">font type</param>
+            <param name="fontSize">font size</param>
+            <param name="fontStyle">font style</param>
+            <param name="color">font color</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawTextRect(System.Single,System.Single,System.Single,System.Single,ZMTGraphics.ZMotifGraphics.TextAlignmentEnum,System.String,System.String,System.Single,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Int32)">
+            <summary>
+            Draws text into user specified rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="rectWidth">width of rectangle</param>
+            <param name="rectHeight">height of rectangle</param>
+            <param name="alignment">text alignment</param>
+            <param name="text">text to draw</param>
+            <param name="font">font type</param>
+            <param name="fontSize">font size</param>
+            <param name="fontStyle">font style</param>
+            <param name="color">font color</param>
+        </member>
+        <member name="M:ZMTGraphics.IZMotifGraphics.DrawTextRect(System.Single,System.Single,System.Single,System.Single,System.Single,ZMTGraphics.ZMotifGraphics.TextAlignmentEnum,System.String,System.String,System.Single,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Int32)">
+            <summary>
+            Draws text into user specified rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="rectWidth">width of rectangle</param>
+            <param name="rectHeight">height of rectangle</param>
+            <param name="angle">text rotation</param>
+            <param name="alignment">text alignment</param>
+            <param name="text">text to draw</param>
+            <param name="font">font type</param>
+            <param name="fontSize">font size</param>
+            <param name="fontStyle">font style</param>
+            <param name="color">font color</param>
+        </member>
+        <member name="P:ZMTGraphics.IZMotifGraphics.ImageRotation">
+            <summary>
+            Gets or Sets the image rotation to be used with DrawImage routines
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IZMotifGraphics.Barcode">
+            <summary>
+            Returns the Barcode class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IAztecCodeProperties">
+            <summary>
+            Interface for Aztec properties class
+            </summary>   
+        </member>
+        <member name="P:ZMTGraphics.IAztecCodeProperties.CodeFormat">
+            <summary>
+            Gets or Sets the code format to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IAztecCodeProperties.CodeModuleSize">
+            <summary>
+            Gets or Sets the module size.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IAztecCodeProperties.CodeRune">
+            <summary>
+            Gets or Sets the Code Rune value.  Value must be from 
+            0 to 255 and is available for Compact Format only.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IAztecCodeProperties.ErrorCorrection">
+            <summary>
+            Gets or Sets the Error Correction percentage to apply.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ZMotifGraphics">
+            <summary>
+            ZMotif Printer Graphics Class
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.GetSDKVersion(System.Byte@,System.Byte@,System.Byte@,System.Byte@)">
+            <summary>
+            Returns the version of the dll
+            </summary>
+            <param name="major">Major component of version</param>
+            <param name="minor">Minor component of version</param>
+            <param name="build">Build component of version</param>
+            <param name="revision">Revision component of version</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.GetSDKProductVersion(System.String@)">
+            <summary>
+            Returns the product version of the SDK
+            </summary>
+            <param name="productVersion"></param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.InitGraphics(System.Int32,System.Int32,ZMTGraphics.ZMotifGraphics.ImageOrientationEnum,ZMTGraphics.ZMotifGraphics.RibbonTypeEnum,System.Int32)">
+            <summary>
+            Initializes the drawing surface
+            </summary>
+            <param name="maxWidth">maximum width of the drawing surface</param>
+            <param name="maxHeight">maximum height of the drawing surface</param>
+            <param name="imgOrientation">image orientation</param>
+            <param name="ribType">ribbon type to be used when printing this image</param>
+            <param name="fillColor">background fill color</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.InitGraphics(System.Int32,System.Int32,ZMTGraphics.ZMotifGraphics.ImageOrientationEnum,ZMTGraphics.ZMotifGraphics.RibbonTypeEnum)">
+            <summary>
+            Initializes the drawing surface
+            </summary>
+            <param name="maxWidth">maximum width of the drawing surface</param>
+            <param name="maxHeight">maximum height of the drawing surface</param>
+            <param name="imgOrientation">image orientation</param>
+            <param name="ribType">ribbon type to be used when printing this image</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.ClearGraphics">
+            <summary>
+            Clears all drawing buffers and restores default values
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.CloseGraphics">
+            <summary>
+            Close ZMTGraphics and clean-up
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.CreateBitmap(System.Int32@)">
+            <summary>
+            Returns byte[] containing image data created based on user selections
+            </summary>
+            <param name="dataLen">length of image data byte[]</param>
+            <returns>byte[] containing image data</returns>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawTextString(System.Single,System.Single,System.String,System.String,System.Single,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Int32)">
+            <summary>
+            Draws text to user specified coordinates
+            </summary>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="text">text to draw</param>
+            <param name="font">font type</param>
+            <param name="fontSize">font size</param>
+            <param name="fontStyle">font style</param>
+            <param name="color">font color</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawTextString(System.Single,System.Single,System.Single,ZMTGraphics.ZMotifGraphics.TextAlignmentEnum,System.String,System.String,System.Single,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Int32)">
+            <summary>
+            Draws text to user specified coordinates
+            </summary>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="angle">text rotation</param>
+            <param name="alignment">text alignment</param>
+            <param name="text">text to draw</param>
+            <param name="font">font type</param>
+            <param name="fontSize">font size</param>
+            <param name="fontStyle">font style</param>
+            <param name="color">font color</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawTextRect(System.Single,System.Single,System.Single,System.Single,ZMTGraphics.ZMotifGraphics.TextAlignmentEnum,System.String,System.String,System.Single,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Int32)">
+            <summary>
+            Draws text into user specified rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="rectWidth">width of rectangle</param>
+            <param name="rectHeight">height of rectangle</param>
+            <param name="alignment">text alignment</param>
+            <param name="text">text to draw</param>
+            <param name="font">font type</param>
+            <param name="fontSize">font size</param>
+            <param name="fontStyle">font style</param>
+            <param name="color">font color</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawTextRect(System.Single,System.Single,System.Single,System.Single,System.Single,ZMTGraphics.ZMotifGraphics.TextAlignmentEnum,System.String,System.String,System.Single,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Int32)">
+            <summary>
+            Draws text into user specified rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="rectWidth">width of rectangle</param>
+            <param name="rectHeight">height of rectangle</param>
+            <param name="angle">text rotation</param>
+            <param name="alignment">text alignment</param>
+            <param name="text">text to draw</param>
+            <param name="font">font type</param>
+            <param name="fontSize">font size</param>
+            <param name="fontStyle">font style</param>
+            <param name="color">font color</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawImage(System.Byte[]@,System.Single,System.Single,System.Int32,System.Int32,System.Single)">
+            <summary>
+            Draws an image to user specified coordinates
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="imgWidth">image width</param>
+            <param name="imgHeight">image height</param>
+            <param name="opacity">image opacity (0 to 100)</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawImage(System.Byte[]@,System.Single,System.Single,System.Int32,System.Int32,System.Single,System.Int32,System.Int32)">
+            <summary>
+            Draws an image to user specified coordinates
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="imgWidth">image width</param>
+            <param name="imgHeight">image height</param>
+            <param name="opacity">image opacity (0 to 100)</param>
+            <param name="transparencyColorLow">color to make transparent</param>
+            <param name="transparencyColorHigh">color to make transparent</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawImage(System.Byte[]@,ZMTGraphics.ZMotifGraphics.ImagePositionEnum,System.Int32,System.Int32,System.Single)">
+            <summary>
+            Draws image to user specified location
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <param name="position">position to draw the image to</param>
+            <param name="imgWidth">image width</param>
+            <param name="imgHeight">image height</param>
+            <param name="opacity">image opacity (0 to 100)</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawLine(System.Single,System.Single,System.Single,System.Single,System.Int32,System.Single)">
+            <summary>
+            Draws a line
+            </summary>
+            <param name="x1">x-offset starting point</param>
+            <param name="y1">y-offset starting point</param>
+            <param name="x2">x-offset end point</param>
+            <param name="y2">y-offset end point</param>
+            <param name="color">line color</param>
+            <param name="thickness">line thickness</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawRectangle(System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>
+            Draws a rectangle
+            </summary>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">heigth of rectangle</param>
+            <param name="thickness">line thickness of rectangle</param>
+            <param name="color">line color of rectangle</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawFillRectangle(System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>
+            Draws a color filled rectangle
+            </summary>
+            <param name="x">x-offset</param>
+            <param name="y">y-offset</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">heigth of rectangle</param>
+            <param name="fillColor">fill color of rectangle</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawEllipse(System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>
+            Draws an elipse into a specified rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">height of rectangle</param>
+            <param name="thickness">line thickness of ellipse</param>
+            <param name="color">line color of ellipse</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.DrawFillEllipse(System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>
+            Draws an elipse into a specified rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">height of rectangle</param>
+            <param name="fillColor">fill color of ellipse</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.ConvertToGrayScale(System.Single)">
+            <summary>
+            Converts the image to grayscale
+            </summary>
+            <param name="scaleFactor">0.1 to 1</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.AdjustBrightness(System.Int32)">
+            <summary>
+            Adjusts the images overall brightness level
+            </summary>
+            <param name="brightnessLevel">-25 to 25</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.AdjustContrast(System.Int32)">
+            <summary>
+            Adjusts the overall contrast level of the image
+            </summary>
+            <param name="contrastLevel">-25 to 25</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.AdjustColorScale(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adjusts the contrast level for red, green, and blue colors
+            </summary>
+            <param name="redLevel">-25 to 25</param>
+            <param name="greenLevel">-25 to 25</param>
+            <param name="blueLevel">-25 to 25</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.AdjustSaturation(System.Int32)">
+            <summary>
+            Adjusts the saturation level of the image
+            </summary>
+            <param name="saturationLevel">-25 to 25</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.AdjustGamma(System.Int32)">
+            <summary>
+            Sets the gamma correction level
+            </summary>
+            <param name="gammaLevel">-25 to 25</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.SharpenImage(System.Byte[]@,System.Int32)">
+            <summary>
+            Performs sharpening on user supplied image data
+            </summary>
+            <param name="imageData">byte[] containing sharpened image data</param>
+            <param name="sharpeningLevel">0 to 100</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.RotateHue(System.Single)">
+            <summary>
+            Performs color hue rotation
+            </summary>
+            <param name="rotation">0 to 360</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.SetBlackExtractionLevels(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adjust RGB levels used for black data extraction.
+            All values are from 0 to 5.
+            </summary>
+            <param name="redLevel">Offset value for red pixels</param>
+            <param name="greenLevel">Offset value for green pixels</param>
+            <param name="blueLevel">Offset value for blue pixels</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.ExtractBlackData(System.Byte[]@,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            Extract black image data from a given image.
+            </summary>
+            <param name="imageData">Original image</param>
+            <param name="colorImg">Color image data</param>
+            <param name="blackImg">Mono 1bpp image data</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.SaveImageProfile(System.String)">
+            <summary>
+            Saves user configured color profile
+            </summary>
+            <param name="profilePath">full path to save the profile to (*.xml)</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.LoadImageProfile(System.String)">
+            <summary>
+            Loads user saved color profile
+            </summary>
+            <param name="profilePath">full path to color profile (*.xml)</param>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.IntegerFromColor(System.Drawing.Color)">
+            <summary>
+            Converts color object to integer value
+            </summary>
+            <param name="color">color object</param>
+            <returns>color's integer value</returns>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.IntegerFromColorName(System.String)">
+            <summary>
+            Converts color name to integer value
+            </summary>
+            <param name="colorName">name of color</param>
+            <returns>integer value of color</returns>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.ImageFileToByteArray(System.String)">
+            <summary>
+            Converts image file to byte array
+            </summary>
+            <param name="filename">full path to image file</param>
+            <returns>image data byte[]</returns>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.ImageFromByteArray(System.Byte[]@)">
+            <summary>
+            Converts bitmap data into a bitmap image
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <returns>bitmap image</returns>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.IPictureFromByteArray(System.Byte[]@)">
+            <summary>
+            Converts bitmap image data into VB6 compatible IPicture object
+            </summary>
+            <param name="imageData">byte[] containing image data</param>
+            <returns>IPicture object</returns>
+        </member>
+        <member name="M:ZMTGraphics.ZMotifGraphics.MakeTransparent(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="bitmap"></param>
+            <param name="transparentColorLow"></param>
+            <param name="transparentColorHigh"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ZMTGraphics.ZMotifGraphics.Barcode">
+            <summary>
+            Returns the Barcode class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.ZMotifGraphics.ImageRotation">
+            <summary>
+            Gets or Sets the image rotation to be used with DrawImage routines
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ZMotifGraphics.RibbonTypeEnum">
+            <summary>
+            Specifies the type of ribbon used to print the image
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RibbonTypeEnum.Color">
+            <summary>
+            YMC panels
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RibbonTypeEnum.MonoUV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RibbonTypeEnum.MonoK">
+            <summary>
+            K panel
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RibbonTypeEnum.Overlay">
+            <summary>
+            Overlay panel
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RibbonTypeEnum.GrayUV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RibbonTypeEnum.GrayDye">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RibbonTypeEnum.Monok_NoPanels">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RibbonTypeEnum.Inhibit">
+            <summary>
+            Inhibit panel
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ZMotifGraphics.ImageOrientationEnum">
+            <summary>
+            Specifies the orientation of the image
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.ImageOrientationEnum.Portrait">
+            <summary>
+            Portrait
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.ImageOrientationEnum.Landscape">
+            <summary>
+            Landscape
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ZMotifGraphics.ImagePositionEnum">
+            <summary>
+            Specifies the location to draw the image
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.ImagePositionEnum.UpperLeft">
+            <summary>
+            Upper left hand corner of drawing surface
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.ImagePositionEnum.LowerLeft">
+            <summary>
+            Lower left hand corner of drawing surface
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.ImagePositionEnum.UpperRight">
+            <summary>
+            Upper right hand corner of drawing surface
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.ImagePositionEnum.LowerRight">
+            <summary>
+            Lower right hand corner of drawing surface
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.ImagePositionEnum.Centered">
+            <summary>
+            Center of drawing surface
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ZMotifGraphics.FontTypeEnum">
+            <summary>
+            Specifies style information applied to text.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.FontTypeEnum.Regular">
+            <summary>
+            Normal text.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.FontTypeEnum.Bold">
+            <summary>
+            Bold text.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.FontTypeEnum.Italic">
+            <summary>
+            Italic text.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.FontTypeEnum.Underline">
+            <summary>
+            Underlined text.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.FontTypeEnum.Strikeout">
+            <summary>
+            Text with a line through the middle.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ZMotifGraphics.TextAlignmentEnum">
+            <summary>
+            Specifies the alignment of a text string relative to its layout rectangle.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.TextAlignmentEnum.Near">
+            <summary>
+            Specifies the text be aligned near the layout. In a left-to-right layout,
+            the near position is left. In a right-to-left layout, the near position is
+            right.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.TextAlignmentEnum.Center">
+            <summary>
+            Specifies that text is aligned in the center of the layout rectangle.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.TextAlignmentEnum.Far">
+            <summary>
+            Specifies that text is aligned far from the origin position of the layout
+            rectangle. In a left-to-right layout, the far position is right. In a right-to-left
+            layout, the far position is left.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ZMotifGraphics.RotationTypeEnum">
+            <summary>
+            Specifies the rotation of the graphic object.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate180FlipXY">
+            <summary>
+            Specifies a 180-degree rotation followed by a horizontal and vertical flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.RotateNoneFlipNone">
+            <summary>
+            Specifies no rotation and no flipping.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate270FlipXY">
+            <summary>
+            Specifies a 270-degree rotation followed by a horizontal and vertical flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate90FlipNone">
+            <summary>
+            Specifies a 90-degree rotation without flipping.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate180FlipNone">
+            <summary>
+            Specifies a 180-degree rotation without flipping.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.RotateNoneFlipXY">
+            <summary>
+            Specifies no rotation followed by a horizontal and vertical flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate270FlipNone">
+            <summary>
+            Specifies a 270-degree rotation without flipping.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate90FlipXY">
+            <summary>
+            Specifies a 90-degree rotation followed by a horizontal and vertical flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate180FlipY">
+            <summary>
+            Specifies a 180-degree rotation followed by a vertical flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.RotateNoneFlipX">
+            <summary>
+            Specifies no rotation followed by a horizontal flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate90FlipX">
+            <summary>
+            Specifies a 90-degree rotation followed by a horizontal flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate270FlipY">
+            <summary>
+            Specifies a 270-degree rotation followed by a vertical flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.RotateNoneFlipY">
+            <summary>
+            Specifies no rotation followed by a vertical flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate180FlipX">
+            <summary>
+            Specifies a 180-degree rotation followed by a horizontal flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate90FlipY">
+            <summary>
+            Specifies a 90-degree rotation followed by a vertical flip.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.ZMotifGraphics.RotationTypeEnum.Rotate270FlipX">
+            <summary>
+            Specifies a 270-degree rotation followed by a horizontal flip.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode">
+            <summary>
+            Barcode symbology class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IBarcode">
+            <summary>
+            Interface for Barcode class
+            </summary> 
+        </member>
+        <member name="M:ZMTGraphics.IBarcode.ClearBarcode">
+            <summary>
+            Reset all properties to default values
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.IBarcode.DrawBarcode(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Draws the selected barcode symbology into a user defined rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">height of rectangle</param>
+            <param name="scale">scale value</param>
+        </member>
+        <member name="M:ZMTGraphics.IBarcode.DrawBarcode(System.Single,System.Single,System.Single,System.Single,ZMTGraphics.Barcode.RotationTypeEnum,System.String,System.Int32,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Single)">
+            <summary>
+            Draws the selected barcode symbology into a user defined rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">height of rectangle</param>
+            <param name="rotation">barcode rotation</param>
+            <param name="font">name of font to use</param>
+            <param name="fontSize">size of font to use</param>
+            <param name="fontStyle">font style</param>
+            <param name="scale">scale value</param>
+        </member>
+        <member name="M:ZMTGraphics.IBarcode.DrawBarcode">
+            <summary>
+            Draws the selected barcode symbology utilizing the barcode property values
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.AddChecksum">
+            <summary>
+            Gets or sets whether a checksum must be generated 
+            and attached to the value to encode.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.AntiAlias">
+            <summary>
+            Gets or Sets whether AntiAlias effect must be applied
+            to all the texts in the barcode image. 
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.AutoSize">
+            <summary>
+            Gets or Sets whether the barcode image is automatically resized
+            to display its entire contents.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarcodeHeight">
+            <summary>
+            Get or set the barcode image height if the
+            AutoSize property is set to false.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarcodeWidth">
+            <summary>
+            Get or set the width of the barcode image if the
+            AutoSize property is set to false.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarcodeTopMargin">
+            <summary>
+            Get or set the height of the margin above
+            the barcode bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarcodeBottomMargin">
+            <summary>
+            Gets or Sets the margin below the barcode bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.AztecCodeProperties">
+            <summary>
+            Returns AztecCode symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarcodeMarginProperties">
+            <summary>
+            Returns Barcode margin properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.Code128Properties">
+            <summary>
+            Returns Code128 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.Code16kProperties">
+            <summary>
+            Returns Code16k properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.Code39And93Properties">
+            <summary>
+            Returns Code39 and Code93 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.Isbt128Properties">
+            <summary>
+            Returns ISBT 128 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.MaxiCodeProperties">
+            <summary>
+            Returns MaxiCode properties class.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.MicroQRProperties">
+            <summary>
+            Returns MicroQR properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.MSIProperties">
+            <summary>
+            Returns MSI properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.GS1DatBarAndRSSExpandedStackedProperties">
+            <summary>
+            Returns GS1 DataBar Expanded Stacked and RSS Expanded Stacked properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BearerBarProperties">
+            <summary>
+            Returns Bearer Bar properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.DisplayHumanReadableText">
+            <summary>
+            Get or set the Human Readable Text to be displayed
+            instead of the value to encode specified in the 
+            ValueToEncode property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.HIBCFormattedHumanReadableText">
+            <summary>
+            Get or set whether the Human Readable Text is
+            formatted as specified by HIBC standards.  Zeros
+            are displayed as Slashed-Zeros and the space character 
+            is displayed as an underscore.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BackColor">
+            <summary>
+            Gets or Sets the background color.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.Font">
+            <summary>
+            Get or set the Font object for use when
+            rendering Code and Human Readable text.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.ForeColor">
+            <summary>
+            Get or set the text color to use when rendering 
+            Code and Human Readable text.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarcodeType">
+            <summary>
+            Gets or Sets the barcode type to generate.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarColor">
+            <summary>
+            Gets or Sets the color of the bars. 
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarHeight">
+            <summary>
+            Gets or Sets the bars height.  
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarRatio">
+            <summary>
+            Gets or Sets the wide bars' width compared to
+            the narrow bars' width.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BarWidth">
+            <summary>
+            Gets or Sets the narrow bars' width.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BorderColor">
+            <summary>
+            Gets or Sets the barcode control border color.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.BorderWidth">
+            <summary>
+            Gets or Sets the barcode image border width.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.CodabarProperties">
+            <summary>
+            Returns Codabar symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.DataMatrixProperties">
+            <summary>
+            Returns DataMatrix symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.DisplayStopStartChars">
+            <summary>
+            Gets or Sets whether start and stop characters
+            must be displayed in the barcode image.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.DisplayCode">
+            <summary>
+            Gets or Sets whether the value to encode will
+            be displayed in the barcode image.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.Rotation">
+            <summary>
+            Get or set the rotation angle to apply to the barcode.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.EanUpcProperties">
+            <summary>
+            Returns EAN/UPC symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.Pdf417Properties">
+            <summary>
+            Returns PDF417 symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.PharmacodeProperties">
+            <summary>
+            Returns Pharmacode symbolgy properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.PlanetProperties">
+            <summary>
+            Returns Planet symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.PostalStateProperties">
+            <summary>
+            Returns PostalState symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.QRCodeProperties">
+            <summary>
+            Returns QRCode symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.QuietZoneWidth">
+            <summary>
+            Gets or Sets the quiet zones' width.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.TelepenProperties">
+            <summary>
+            Returns Telepen symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.CodeAlignment">
+            <summary>
+            Gets or Sets the text alignment for the DisplayCode property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.UseQuietZoneForText">
+            <summary>
+            Gets or Sets whether quiet zones are used for drawing 
+            Text and/or Code properties.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.USPSProperties">
+            <summary>
+            Returns USPS symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.PostnetProperties">
+            <summary>
+            Returns Postnet symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.ValueToEncode">
+            <summary>
+            Gets or Sets the value to encode.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.DisplayText">
+            <summary>
+            Gets or Sets additional text to show in the barcode image.
+            This is not the value to encode.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.TextFont">
+            <summary>
+            Get or set the Font object for use
+            when rendering the DisplayText property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.TextForeColor">
+            <summary>
+            Get or set the text color when rendering
+            the DisplayText property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcode.TextAlignment">
+            <summary>
+            Gets or sets the text alignment for the DisplayText property.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.DrawBarcode(System.Single,System.Single,System.Single,System.Single,ZMTGraphics.Barcode.RotationTypeEnum,System.String,System.Int32,ZMTGraphics.ZMotifGraphics.FontTypeEnum,System.Single)">
+            <summary>
+            Draws the selected barcode symbology into a user defined rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">height of rectangle</param>
+            <param name="rotation">barcode rotation</param>
+            <param name="font">name of font to use</param>
+            <param name="fontSize">size of font to use</param>
+            <param name="fontStyle">font style</param>
+            <param name="scale">scale value</param>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.DrawBarcode(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Draws the selected barcode symbology into a user defined rectangle
+            </summary>
+            <param name="x">x-offset of rectangle</param>
+            <param name="y">y-offset of rectangle</param>
+            <param name="width">width of rectangle</param>
+            <param name="height">height of rectangle</param>
+            <param name="scale">scale value</param>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.DrawBarcode">
+            <summary>
+            Draws the selected barcode symbology utilizing the barcode property values
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.ClearBarcode">
+            <summary>
+            Reset all properties to default values
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Properties">
+            <summary>
+            Returns PDF417 symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.EanUpcProperties">
+            <summary>
+            Returns EAN/UPC symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.AztecCodeProperties">
+            <summary>
+            Returns AztecCode symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.CodabarProperties">
+            <summary>
+            Returns Codabar symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.DataMatrixProperties">
+            <summary>
+            Returns DataMatrix symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PharmacodeProperties">
+            <summary>
+            Returns Pharmacode symbolgy properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.TelepenProperties">
+            <summary>
+            Returns Telepen symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PlanetProperties">
+            <summary>
+            Returns Planet symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PostalStateProperties">
+            <summary>
+            Returns PostalState symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.QRCodeProperties">
+            <summary>
+            Returns QRCode symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.USPSProperties">
+            <summary>
+            Returns USPS symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PostnetProperties">
+            <summary>
+            Returns Postnet symbology properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeMarginProperties">
+            <summary>
+            Returns Barcode margin properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Code128Properties">
+            <summary>
+            Returns Code128 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Code16kProperties">
+            <summary>
+            Returns Code16k properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Code39And93Properties">
+            <summary>
+            Returns Code39 and Code93 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Isbt128Properties">
+            <summary>
+            Returns ISBT 128 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.MaxiCodeProperties">
+            <summary>
+            Returns MaxiCode properties class.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.MicroQRProperties">
+            <summary>
+            Returns MicroQR properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.MSIProperties">
+            <summary>
+            Returns MSI properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.GS1DatBarAndRSSExpandedStackedProperties">
+            <summary>
+            Returns GS1 DataBar Expanded Stacked and RSS Expanded Stacked properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BearerBarProperties">
+            <summary>
+            Returns Bearer Bar properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeType">
+            <summary>
+            Gets or Sets the barcode type to generate.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.ValueToEncode">
+            <summary>
+            Gets or Sets the value to encode.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.DisplayText">
+            <summary>
+            Gets or Sets additional text to show in the barcode image.
+            This is not the value to encode or the Human Readable Text.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.TextFont">
+            <summary>
+            Get or set the Font object for use
+            when rendering the DisplayText property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.TextForeColor">
+            <summary>
+            Get or set the text color when rendering
+            the DisplayText property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.TextAlignment">
+            <summary>
+            Gets or sets the text alignment for the DisplayText property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.DisplayHumanReadableText">
+            <summary>
+            Get or set the Human Readable Text to be displayed
+            instead of the value to encode specified in the 
+            ValueToEncode property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.HIBCFormattedHumanReadableText">
+            <summary>
+            Get or set whether the Human Readable Text is
+            formatted as specified by HIBC standards.  Zeros
+            are displayed as Slashed-Zeros and the space character 
+            is displayed as an underscore.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.DisplayCode">
+            <summary>
+            Gets or Sets whether the value to encode will
+            be displayed in the barcode image.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.CodeAlignment">
+            <summary>
+            Gets or Sets the text alignment for the DisplayCode and 
+            HumanReadableText properties.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.AutoSize">
+            <summary>
+            Gets or Sets whether the barcode image is automatically resized
+            to display its entire contents.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeHeight">
+            <summary>
+            Get or set the barcode image height if the
+            AutoSize property is set to false.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeWidth">
+            <summary>
+            Get or set the width of the barcode image if the
+            AutoSize property is set to false.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeTopMargin">
+            <summary>
+            Get or set the height of the margin above
+            the barcode bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeBottomMargin">
+            <summary>
+            Gets or Sets the margin below the barcode bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.AntiAlias">
+            <summary>
+            Gets or Sets whether AntiAlias effect must be applied
+            to all the texts in the barcode image. 
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BackColor">
+            <summary>
+            Gets or Sets the background color.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BorderColor">
+            <summary>
+            Gets or Sets the barcode control border color.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BorderWidth">
+            <summary>
+            Gets or Sets the barcode image border width.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.QuietZoneWidth">
+            <summary>
+            Gets or Sets the quiet zones' width.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.UseQuietZoneForText">
+            <summary>
+            Gets or Sets whether quiet zones are used for drawing 
+            Text, Code, and HumanReadableText properties.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Font">
+            <summary>
+            Get or set the Font object for use when
+            rendering Code and Human Readable text.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Rotation">
+            <summary>
+            Get or set the rotation angle to apply to the barcode.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.ForeColor">
+            <summary>
+            Get or set the text color to use when rendering 
+            Code and Human Readable text.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarColor">
+            <summary>
+            Gets or Sets the color of the bars. 
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarHeight">
+            <summary>
+            Gets or Sets the bars height.  
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarRatio">
+            <summary>
+            Gets or Sets the wide bars' width compared to
+            the narrow bars' width (N value).
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarWidth">
+            <summary>
+            Gets or Sets the narrow bars' width (X value).
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarWidthAdjustment">
+            <summary>
+            Gets or sets the Bar Width Adjustment.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.DisplayStopStartChars">
+            <summary>
+            Gets or Sets whether start and stop characters
+            must be displayed in the barcode image.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.AddChecksum">
+            <summary>
+            Gets or sets whether a checksum must be generated 
+            and attached to the value to encode.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.BarcodeTypeEnum">
+            <summary>
+            Specifies the Barcode Symbology to be used.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Codabar">
+            <summary>
+            Codabar a.k.a. ABC Codabar, CodaBar, USD-4, NW-7, Code 2 of 7, Monarch, Code-27,
+            Ames code, Rationalized Codabar, 2 of 7 Code, ANSI/AIM Codabar, Uniform Symbology
+            Specification Codabar, USS Codabar 
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Code11">
+            <summary>
+            Code 11 a.k.a. Code11, USD-8, USD8
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Code16k">
+            <summary>
+            Code 16K
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Code39">
+            <summary>
+            Code 39 a.k.a. ANSI/AIM Code 39, ANSI/AIM Code 39, Uniform Symbology Specification
+            Code 39, USS Code 39, USS 39, Code 3/9, Code 3 of 9, USD-3, LOGMARS, Alpha39,
+            Code 39 Extended, and Code 39 Full ASCII
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Code93">
+            <summary>
+            Code 93 a.k.a. ANSI/AIM Code 93, ANSI/AIM Code 93, Uniform Symbology Specification
+            Code 93, USS Code 93, USS 93, Code 9/3, USS-93, USD-3, Code 93 Extended,
+            and Code 93 Full ASCII
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Code128">
+            <summary>
+            Code 128 a.k.a. ANSI/AIM 128, ANSI/AIM Code 128, USS Code 128, Uniform Symbology
+               Specification Code 128, Code 128 Code Set A, Code 128 Code Set B, Code 128
+               Code Set C, Code 128A, Code 128B, Code 128C
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.DataMatrix">
+            <summary>
+            Data Matrix a.k.a. Data Matrix ECC200
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Ean8">
+            <summary>
+            EAN-8 a.k.a. European Article Number 8, EAN-8 Supplement 5/Five-digit Add-On,
+            EAN-8 Supplement 2/Two-digit Add-On, EAN-8+5, EAN-8+2, EAN8, EAN8+5, EAN13+2,
+            UPC-8, GTIN-8, GS1-8
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Ean13">
+            <summary>
+            EAN-13 a.k.a. European Article Number 13, EAN-13 Supplement 5/Five-digit
+            Add-On, EAN-13 Supplement 2/Two-digit Add-On, EAN-13+5, EAN-13+2, EAN13,
+            EAN13+5, EAN13+2, UPC-13, GTIN-13, GS1-13
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Industrial2of5">
+            <summary>
+            Industrial 2 of 5 a.k.a. 2 of 5 Industrial, 2/5 Industrial, 2 of 5 Standard,
+            Standard 2 of 5, 2/5 Standard, Code 2/5, 2 of 5, C 2 of 5
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Interleaved2of5">
+            <summary>
+            Interleaved 2 of 5 a.k.a. ANSI/AIM ITF 25, ANSI/AIM I-2/5, Uniform Symbology
+            Specification ITF, USS ITF 2/5, ITF, I-2/5, 2 of 5 Interleaved, 2/5 Interleaved
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Isbn">
+            <summary>
+            ISBN a.k.a. International Standard Book Number, Bookland EAN, ISBN-13, ISBN-10,
+            ISBN+5, ISBN+2, ISBN Supplement 5/Five-digit Add-On, ISBN Supplement 2/Two-digit
+            Add-On
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Msi">
+            <summary>
+            MSI a.k.a. MSI/Plessey, Modified Plessey
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Pdf417">
+            <summary>
+            PDF417 a.k.a. Portable Data File 417, PDF 417, PDF417 Truncated
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Planet">
+            <summary>
+            PLANET a.k.a. USPS PLANET Barcode, USPS Confirm Service Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Postnet">
+            <summary>
+            POSTNET a.k.a. USPS POSTNET Barcode, USPS POSTal Numeric Encoding Technique
+            Barcode, Delivery Point Barcode (DPBC), Postnet 3 of 5
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UccEan128">
+            <summary>
+            UCC/EAN-128 a.k.a. EAN-128, UCC-128, USS-128, GS1-128, UCC.EAN-128, GTIN-128
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UpcA">
+            <summary>
+            UPC-A a.k.a. Universal Product Code version A, UPC-A Supplement 5/Five-digit
+            Add-On, UPC-A Supplement 2/Two-digit Add-On, UPC-A+5, UPC-A+2, UPC Code,
+            UPC Symbol, GTIN-12, GS1-12
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UpcE">
+            <summary>
+            UPC-E a.k.a. Universal Product Code version E, UPC-E Supplement 5/Five-digit
+            Add-On, UPC-E Supplement 2/Two-digit Add-On, UPC-E+5, UPC-E+2, UPC-E0, E0,
+            UPC-E1, E1, GTIN-12 with lead 0, GS1-12
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UspsOneCode4CB">
+            <summary>
+            USPS OneCode 4-State Customer Barcode a.k.a. OneCode 4CB, USPS 4CB, 4-CB,
+            4-State Customer Barcode, USPS OneCode Solution Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.RoyalMail">
+            <summary>
+            British Royal Mail 4-State Customer Barcode a.k.a. RM4SCC, RoyalMail4SCC,
+            British Royal Mail 4-State Customer Code and Royal Mail Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.AustraliaPost">
+            <summary>
+            Australia Post 4-state Barcode a.k.a. Australian 4-state postal barcode,
+            Australia Post Customer Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.RoyalTpgPostKix">
+            <summary>
+            Royal TPG Post KIX 4-State Barcode a.k.a. Kix Barcode, Klantenindex (client
+            index) Barcode, Dutch KIX 4-State Bar Code, Dutch KIX, TPG KIX, and TPGPOST
+            KIX
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Sscc18">
+            <summary>
+            SSCC-18 a.k.a. UPC-128 Shipping Container Code, Code 128 UPC Shipping Container
+            Code, Serial Shipping Container Code, UCC-128, EAN-18, NVE (Nummer der Versandeinheit)
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Pzn">
+            <summary>
+            PZN a.k.a. Pharma-Zentral-Nummer, Pharmazentralnummer, Code PZN, CodePZN
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.DeutschePostLeitcode">
+            <summary>
+            Deutsche Post Leitcode Barcode a.k.a. German Postal 2 of 5 Leitcode, CodeLeitcode,
+            Leitcode, Deutsche Post AG (DHL)
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.DeutschePostIdentcode">
+            <summary>
+            Deutsche Post Identcode Barcode a.k.a. German Postal 2 of 5 Identcode, Deutsche
+            Post AG Identcode, Deutsche Frachtpost Identcode, Identcode, CodeIdentcode,
+            Deutsche Post AG (DHL)
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UspsTrayLabel">
+            <summary>
+            USPS Tray Label Barcode a.k.a. USPS 25 Tray label
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UspsSackLabel">
+            <summary>
+            USPS Sack Label Barcode a.k.a. USPS 25 Sack label
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.EanVelocity">
+            <summary>
+            EAN-Velocity a.k.a. Velocity Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.SingaporePost">
+            <summary>
+            Singapore 4-State Postal Code Barcode a.k.a. Singapore 4-State Postal, SingPost
+            4-State, and SingPost Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Jan8">
+            <summary>
+            JAN-8 a.k.a. Japanese Article Number 8, JAN-8 Supplement 5/Five-digit Add-On,
+            JAN-8 Supplement 2/Two-digit Add-On, JAN-8+5, JAN-8+2, JAN8, JAN8+5, JAN8+2
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Jan13">
+            <summary>
+            JAN-13 a.k.a. Japanese Article Number 13, JAN-13 Supplement 5/Five-digit
+            Add-On, JAN-13 Supplement 2/Two-digit Add-On, JAN-13+5, JAN-13+2, JAN13,
+            JAN13+5, JAN13+2
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.SwissPostParcel">
+            <summary>
+            Swiss PostParcel Barcode a.k.a. SwissPost Parcel Barcode, Switzerland Post
+            Parcel Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Opc">
+            <summary>
+            OPC a.k.a. Optical Product Code, VCA Barcode, VCA OPC, Vision Council of
+            America OPC Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Ean99">
+            <summary>
+            EAN-99 a.k.a. European Article Number 99, EAN-99 Supplement 5/Five-digit
+            Add-On, EAN-99 Supplement 2/Two-digit Add-On, EAN-99+5, EAN-99+2, EAN99,
+            EAN99+5, EAN99+2, GTIN-99, GS1-99, Coupon Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Itf14">
+            <summary>
+            ITF-14 a.k.a. UPC Shipping Container Symbol ITF-14, ITF14, Case Code, UPC
+            Case Code, EAN/UCC-14, EAN-14, UCC-14, DUN-14, GTIN-14
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Scc14">
+            <summary>
+            SCC-14 a.k.a. Shipping Container Code, EAN/UCC 14, DUN-14, EAN-14, UCC-14,
+            UPC Case Code, UPC Shipping Container Code, Distribution Unit Number 14,
+            SCC14, DUN14, EAN14, UCC14, EAN/UCC-14, Despatch Unit Number 14, GTIN-14
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Issn">
+            <summary>
+            ISSN a.k.a. International Standard Serial Number, ISSN-13, ISSN-10, ISSN+5,
+            ISSN+2, ISSN Supplement 5/Five-digit Add-On, ISSN Supplement 2/Two-digit
+            Add-On
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Ismn">
+            <summary>
+            ISMN a.k.a. International Standard Music Number, ISMN-13, ISMN-10, ISMN+5,
+            ISMN+2, ISMN Supplement 5/Five-digit Add-On, ISMN Supplement 2/Two-digit
+            Add-On, ISO 10957
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.NumlyNumber">
+            <summary>
+            Numly Number a.k.a. ESN, Electronic Serial Number, Electronic Standard Book
+            Number, ESBN
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.QRCode">
+            <summary>
+            QR Code a.k.a. Quick Response Code, QRCode Model 2, JIS X 0510, ISO-IEC 18004
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UspsFim">
+            <summary>
+            USPS FIM a.k.a. Facing Identification Marks, FIM A B C D
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UspsHorizontalBars">
+            <summary>
+            USPS Horizontal Bars
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Telepen">
+            <summary>
+            Telepen a.k.a. SB Telepen
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Pharmacode">
+            <summary>
+            Pharmacode a.k.a. Pharmacode Laetus, Pharmaceutical Binary Code
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Semacode">
+            <summary>
+            Semacode a.k.a. URL Barcode, Semacode Tag
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Code32">
+            <summary>
+            Code 32 a.k.a. Italian Pharmacode, IMH, Codice 32 Pharmacode, Codice Farmaceutico
+            Italiano, Radix 32 Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UspsPicUccEan128">
+            <summary>
+            USPS PIC UCC/EAN-128 a.k.a. USPS Package Identification Code, USPS Confirmation
+            Services Tracking Number Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.FedExGround96">
+            <summary>
+            FedEx Ground 96 a.k.a. FedEx 96 Barcode, FedEx Ground 96 UCC/EAN-128, 96
+            Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.AztecCode">
+            <summary>
+            Aztec Code a.k.a. AIM Aztec Barcode, ANSI/AIM BC13 ITS/97/002
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.CompactPdf417">
+            <summary>
+            Compact PDF417 a.k.a. Compact Portable Data File 417, Compact PDF 417, PDF417
+            Truncated
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.MacroPdf417">
+            <summary>
+            Macro PDF417 a.k.a. Macro Portable Data File 417, Macro PDF 417, MacroPDF417
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.MicroPdf417">
+            <summary>
+            Micro PDF417 a.k.a. Micro Portable Data File 417, Micro PDF 417, MicroPDF417
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.VicsBol">
+            <summary>
+            VICS BOL a.k.a. VICS Bill of Lading, Voluntary Interindustry Commerce Solutions
+            Bill of Lading, BOL Barcode, 17-digit BOL, VICS standard Bill of Lading
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.VicsScacPro">
+            <summary>
+            VICS SCAC PRO a.k.a. VICS Bill of Lading SCAC PRO, Voluntary Interindustry
+            Commerce Solutions Bill of Lading SCAC PRO, SCAC Barcode, PRO Barcode, VICS
+            SCAC, VICS PRO, SCAC/Pro Barcode, Standard Carrier Alpha Code, Carrier SCAC
+            Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.ItalianPost25">
+            <summary>
+            Italian Post 25 a.k.a. Italian Post ITF 2/5, PosteItaliane Registered Mail
+            Barcode, PosteItaliane ITF
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Isbt128">
+            <summary>
+            ISBT 128 a.k.a. ISBT Barcode, ISBT128, International Society of Blood Transfusion
+            Barcode, ICCBBA 128, International Council for Commonality in Blood Banking
+            Automation Barcode, Unique Donation Identification Barcode, American Association
+            of Blood Banks AABB 128 Barcode, American Red Cross ARC Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.HibcLic39">
+            <summary>
+            HIBC LIC 39 a.k.a. HIBCC LIC, HIBC Labeler Identification Code, HIBC Supplier
+            Labeling Standard Barcode, HIBC SLS Barcode, HIBC LIC Primary Data Structure,
+            HIBC LIC Secondary Data Structure, HIBC Code 39, HIBC PCN Barcode, HIBC Universal
+            Product Number, HIBC UPN Barcode, Health Industry Bar Code, Health Industry
+            Business Communications Council Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.HibcLic128">
+            <summary>
+            HIBC LIC 128 a.k.a. HIBCC LIC, HIBC Labeler Identification Code, HIBC Supplier
+            Labeling Standard Barcode, HIBC SLS Barcode, HIBC LIC Primary Data Structure,
+            HIBC LIC Secondary Data Structure, HIBC Code 128, HIBC PCN Barcode, HIBC
+            Universal Product Number, HIBC UPN Barcode, Health Industry Bar Code, Health
+            Industry Business Communications Council Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.HibcPas39">
+            <summary>
+            HIBC PAS 39 a.k.a. HIBCC PAS, HIBC Provider Applications Standard, HIBC Provider
+            Applications Standard Barcode, HIBC PAS Barcode, HIBC PAS Data Structure,
+            HIBC PAS Single Data Structure, HIBC PAS Split Data Field, HIBC PAS Multiple
+            Data Field (Concatenated), HIBC PAS Code 39, HIBC Health Care Services Provider
+            Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.HibcPas128">
+            <summary>
+            HIBC PAS 128 a.k.a. HIBCC PAS, HIBC Provider Applications Standard, HIBC
+            Provider Applications Standard Barcode, HIBC PAS Barcode, HIBC PAS Data Structure,
+            HIBC PAS Single Data Structure, HIBC PAS Split Data Field, HIBC PAS Multiple
+            Data Field (Concatenated), HIBC PAS Code 128, HIBC Health Care Services Provider
+            Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UspsIntelligentMail">
+            <summary>
+            USPS Intelligent Mail Barcode a.k.a. OneCode 4CB, USPS 4CB, 4-CB, 4-State
+            Customer Barcode, USPS OneCode Solution Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.EanUpcAddOn2">
+            <summary>
+            EAN UPC Add On 2 a.k.a. EAN Supplement 2/Two-digit Add-On, EAN+2, UPC Supplement
+            2/Two-digit Add-On, UPC+2
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.EanUpcAddOn5">
+            <summary>
+            EAN UPC Add On 5 a.k.a. EAN Supplement 5/Five-digit Add-On, EAN+5, UPC Supplement
+            5/Five-digit Add-On, UPC+5
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.UspsPicCode128">
+            <summary>
+            USPS PIC Code 128 a.k.a. USPS Package Identification Code USS Code 128, USPS
+            Confirmation Services Tracking Number Barcode USS Code 128
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBarOmnidirectional">
+            <summary>
+            GS1 DataBar Omnidirectional a.k.a. RSS14, Reduced Space Symbology 14
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBar14">
+            <summary>
+            GS1 DataBar-14 a.k.a. GS1 DataBar Omnidirectional, RSS14, Reduced Space Symbology
+            14
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Rss14">
+            <summary>
+            RSS14 a.k.a. RSS 14, Reduced Space Symbology 14, GS1 DataBar Omnidirectional
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBarTruncated">
+            <summary>
+            GS1 DataBar Truncated a.k.a. RSS 14 Truncated, Reduced Space Symbology 14
+            Truncated
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBar14Truncated">
+            <summary>
+            GS1 DataBar-14 Truncated a.k.a. GS1 DataBar Truncated, RSS 14 Truncated,
+            Reduced Space Symbology 14 Truncated
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Rss14Truncated">
+            <summary>
+            RSS14 Truncated a.k.a. RSS 14 Truncated, Reduced Space Symbology 14 Truncated,
+            GS1 DataBar Truncated
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBarStacked">
+            <summary>
+            GS1 DataBar Stacked a.k.a. RSS 14 Stacked, Reduced Space Symbology 14 Stacked,
+            GS1 DataBar 14 Stacked
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBar14Stacked">
+            <summary>
+            GS1 DataBar-14 Stacked a.k.a. RSS 14 Stacked, Reduced Space Symbology 14
+            Stacked, GS1 DataBar Stacked
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Rss14Stacked">
+            <summary>
+            RSS14 Stacked a.k.a. RSS 14 Stacked, Reduced Space Symbology 14 Stacked,
+            DataBar Stacked
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBarStackedOmnidirectional">
+            <summary>
+            GS1 DataBar Stacked Omnidirectional a.k.a. GS1 DataBar-14 Stacked Omnidirectional,
+            RSS 14 Stacked Omnidirectional, Reduced Space Symbology 14 Stacked Omnidirectional
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBar14StackedOmnidirectional">
+            <summary>
+            GS1 DataBar-14 Stacked Omnidirectional a.k.a. GS1 DataBar Stacked Omnidirectional,
+            14 Stacked Omnidirectional, Reduced Space Symbology 14 Stacked Omnidirectional
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Rss14StackedOmnidirectional">
+            <summary>
+            RSS14 Stacked Omnidirectional a.k.a. RSS 14 Stacked Omnidirectional, Reduced
+            Symbology 14 Stacked Omnidirectional, GS1 DataBar-14 Stacked Omnidirectional,
+            GS1 DataBar Stacked Omnidirectional
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBarLimited">
+            <summary>
+            GS1 DataBar Limited a.k.a. GS1 DataBar-14 Limited, RSS Limited, Reduced Space
+            Symbology Limited
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.RssLimited">
+            <summary>
+            RSS Limited a.k.a. Reduced Space Symbology Limited, GS1 DataBar-14 Limited,
+            GS1 DataBar Limited
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBarExpanded">
+            <summary>
+            GS1 DataBar Expanded a.k.a. RSS Expanded, Reduced Space Symbology Expanded
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.RssExpanded">
+            <summary>
+            RSS Expanded a.k.a. GS1 DataBar Expanded, Reduced Space Symbology Expanded
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1DataBarExpandedStacked">
+            <summary>
+            GS1 DataBar Expanded Stacked a.k.a. RSS Expanded Stacked, Reduced Space Symbology
+            Expanded Stacked
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.RssExpandedStacked">
+            <summary>
+            RSS Expanded Stacked a.k.a. GS1 DataBar Expanded Stacked, Reduced Space Symbology
+            Expanded Stacked
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.GS1128">
+            <summary>
+            GS1-128 a.k.a. UCC/EAN-128, EAN-128, UCC-128, USS-128, UCC.EAN-128, GTIN-128
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.MaxiCode">
+            <summary>
+            MaxiCode a.k.a. UPS MaxiCode, Maxi Code, United Parcel Service MaxiCode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.MicroQRCode">
+            <summary>
+            Micro QR Code a.k.a. Micro Quick Response Code, Micro QRCode Model 2
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.Matrix2of5">
+            <summary>
+            Matrix 2 of 5 a.k.a. 2 of 5 Matrix, 2/5 Matrix
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.DanishPostal39">
+            <summary>
+            Danish Postal 39 a.k.a. Danish PTT 39, Post Danmark A/S Barcode, Post Danmark
+            Parcel Barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeTypeEnum.FrenchPostal39AR">
+            <summary>
+            French Postal 39 A/R a.k.a. French Postal A/R 39, La Poste A/R 39
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.TextAlignmentEnum">
+            <summary>
+            Specifies the text alignment on the barcode image
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.TextAlignmentEnum.AboveCenter">
+            <summary>
+            Above symbology center jsutified
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.TextAlignmentEnum.AboveLeft">
+            <summary>
+            Above symbology left justified
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.TextAlignmentEnum.AboveRight">
+            <summary>
+            Above symbology right justified
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.TextAlignmentEnum.BelowCenter">
+            <summary>
+            Below symbology center justified
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.TextAlignmentEnum.BelowLeft">
+            <summary>
+            Below symbology left justified
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.TextAlignmentEnum.BelowRight">
+            <summary>
+            Below symbology right justified
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.RotationTypeEnum">
+            <summary>
+            Specifies the rotation angle to apply on the barcode image. It is measured
+            clockwise from the x-axis.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.RotationTypeEnum.None">
+            <summary>
+            No rotation
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.RotationTypeEnum.Degree90">
+            <summary>
+            90 degree rotation
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.RotationTypeEnum.Degree180">
+            <summary>
+            180 degree rotation
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.RotationTypeEnum.Degree270">
+            <summary>
+            270 degree rotation
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.BarcodeUnitEnum">
+            <summary>
+            Specifies the unit of measure for barcode generation.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeUnitEnum.Inch">
+            <summary>
+            Specifies the inch as the unit of measure.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeUnitEnum.Millimeter">
+            <summary>
+            Specifies the millimeter as the unit of measure.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeUnitEnum.Centimeter">
+            <summary>
+            Specifies the centimeter as the unit of measure.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeUnitEnum.Mils">
+            <summary>
+            Specifies the Mils (one-thousandth of an inch) as the unit of measure.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Pdf417Props">
+            <summary>
+            Available properties for PDF417 symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IPdf417Properties">
+            <summary>
+            Interface for Pdf417 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.AspectRatio">
+            <summary>
+            Gets or Sets the ratio of the height to the overall width.
+            Range is 0 to 1.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.Columns">
+            <summary>
+            Gets or Sets the number of columns to use. 
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.CompactionType">
+            <summary>
+            Gets or Sets the Compaction type to apply.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.ErrorCorrectionLevel">
+            <summary>
+            Gets or Sets the error correction level to apply.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.FileID">
+            <summary>
+            Gets or Sets the File ID of the Macro PDF417 symbol.
+            Value must be a sequence of codewords (each value between 0 and 899) and
+            must be the same for all data segments.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.MicroPDF417Version">
+            <summary>
+            Gets or sets the MicroPDF417 version
+            a predefined combination of numbers of 
+            columns and rows to be generated
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.Rows">
+            <summary>
+            Gets or Sets the number of rows to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.SegmentCount">
+            <summary>
+            Gets or Sets the number of Macro PDF417 symbols.
+            Value must be less than or equal to 99999.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.SegmentIndex">
+            <summary>
+            Gets or Sets the Segment Index for a Macro PDF417 symbol.
+            Value must be 0 to 99998 and less than the value of 
+            the SegmentCount property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPdf417Properties.Truncated">
+            <summary>
+            Gets or Sets whether the right side of the barcode is removed.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.Pdf417Props.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.AspectRatio">
+            <summary>
+            Gets or Sets the ratio of the height to the overall width.
+            Range is 0 to 1.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.Columns">
+            <summary>
+            Gets or Sets the number of columns to use. 
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.Rows">
+            <summary>
+            Gets or Sets the number of rows to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.CompactionType">
+            <summary>
+            Gets or Sets the Compaction type to apply.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.ErrorCorrectionLevel">
+            <summary>
+            Gets or Sets the error correction level to apply.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.FileID">
+            <summary>
+            Gets or Sets the File ID of the Macro PDF417 symbol.
+            Value must be a sequence of codewords (each value between 0 and 899) and
+            must be the same for all data segments.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.SegmentCount">
+            <summary>
+            Gets or Sets the number of Macro PDF417 symbols.
+            Value must be less than or equal to 99999.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.SegmentIndex">
+            <summary>
+            Gets or Sets the Segment Index for a Macro PDF417 symbol.
+            Value must be 0 to 99998 and less than the value of 
+            the SegmentCount property.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.Truncated">
+            <summary>
+            Gets or Sets whether the right side of the barcode is removed.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Pdf417Props.MicroPDF417Version">
+            <summary>
+            Gets or sets the MicroPDF417 version
+            a predefined combination of numbers of 
+            columns and rows to be generated
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Pdf417Props.CompactionTypeEnum">
+            <summary>
+            Specifies the Compaction Type to apply for PDF417 symbology.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Pdf417Props.CompactionTypeEnum.Auto">
+            <summary>
+            It switches between Text, Binary and Numeric modes in order to minimize the
+            number of codewords to be encoded.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Pdf417Props.CompactionTypeEnum.Binary">
+            <summary>
+            It allows encoding all 256 possible 8-bit byte values. This includes all
+            ASCII characters value from 0 to 127 inclusive and provides for international
+            character set support.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Pdf417Props.CompactionTypeEnum.Text">
+            <summary>
+            It allows encoding all printable ASCII characters, i.e. values from 32 to
+            126 inclusive in accordance with ISO/IEC 646, as well as selected control
+            characters such as TAB (horizontal tab ASCII 9), LF (NL line feed, new line
+            ASCII 10) and CR (carriage return ASCII 13).
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Pdf417Props.CompactionTypeEnum.Numeric">
+            <summary>
+            It allows encoding numeric data strings.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Pdf417Props.ErrorCorrectionLevelEnum">
+            <summary>
+            Specifies the Error Correction Level to apply for PDF417 symbology.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Pdf417Props.MicroPDF417VersionEnum">
+            <summary>
+            Specifies the MicroPDF417 version (a predefined combinations of numbers of
+             columns and rows) to be generated.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.EANUPCProps">
+            <summary>
+            Available properties for EAN and UPC symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IEANUPCProperties">
+            <summary>
+            Interface for EAN UPC properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IEANUPCProperties.DisplayLightMarginIndicator">
+            <summary>
+            Gets or Sets whether light margin indicators should be 
+            displayed in the barcode image.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IEANUPCProperties.SupplementCode">
+            <summary>
+            Gets or Sets the supplement value to use for EAN and UPC
+            symbologies.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IEANUPCProperties.SupplementSeparation">
+            <summary>
+            Gets or Sets the gap separation between the barcode and its
+            supplement.  Mesaured in inches.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IEANUPCProperties.SupplementTopMargin">
+            <summary>
+            Gets or Sets the height of the margin above the EAN/UPC 
+            supplement bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IEANUPCProperties.SupplementType">
+            <summary>
+            Gets or Sets the supplement type to use with EAN
+            and UPC symbologies.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IEANUPCProperties.UPCESystem">
+            <summary>
+            Gets or Sets the number system to use for UPC-E symbologies.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IEANUPCProperties.DisplayGuardBar">
+            <summary>
+            Gets or Sets whether guard bars must be drawn.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IEANUPCProperties.GuardBarHeight">
+            <summary>
+            Gets or Sets the guard bars' height.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.EANUPCProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.EANUPCProps.SupplementType">
+            <summary>
+            Gets or Sets the supplement type to use with EAN
+            and UPC symbologies.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.EANUPCProps.SupplementCode">
+            <summary>
+            Gets or Sets the supplement value to use for EAN and UPC
+            symbologies.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.EANUPCProps.SupplementSeparation">
+            <summary>
+            Gets or Sets the gap separation between the barcode and its
+            supplement.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.EANUPCProps.SupplementTopMargin">
+            <summary>
+            Gets or Sets the height of the margin above the EAN/UPC 
+            supplement bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.EANUPCProps.DisplayLightMarginIndicator">
+            <summary>
+            Gets or Sets whether light margin indicators should be 
+            displayed in the barcode image.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.EANUPCProps.UPCESystem">
+            <summary>
+            Gets or Sets the number system to use for UPC-E symbologies.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.EANUPCProps.DisplayGuardBar">
+            <summary>
+            Gets or Sets whether EAN/UPC guard bars must be drawn.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.EANUPCProps.GuardBarHeight">
+            <summary>
+            Gets or Sets the guard bars' height.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.EANUPCProps.SupplementTypeEnum">
+            <summary>
+            Specifies the supplement type to use with EAN and UPC symbologies.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.EANUPCProps.UPCENumberSystemEnum">
+            <summary>
+            Specifies the number system to use for UPC-E symbology.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.AztecCodeProps">
+            <summary>
+            Properties available for AztecCode Symbology
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.AztecCodeProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.AztecCodeProps.ErrorCorrection">
+            <summary>
+            Gets or Sets the Error Correction percentage to apply.
+            Default is 23.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.AztecCodeProps.CodeFormat">
+            <summary>
+            Gets or Sets the code format to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.AztecCodeProps.CodeModuleSize">
+            <summary>
+            Gets or Sets the module size.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.AztecCodeProps.CodeRune">
+            <summary>
+            Gets or Sets the Code Rune value.  Value must be from 
+            0 to 255 and is available for Compact Format only.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.AztecCodeProps.CodeFormatEnum">
+            <summary>
+            Specifies the Aztec Code Format to use.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.CodabarProps">
+            <summary>
+            Available properties for Codabar Barcode Symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ICodabarProperties">
+            <summary>
+            Interface for Codabar properties class
+            </summary>   
+        </member>
+        <member name="P:ZMTGraphics.ICodabarProperties.StartCharacter">
+            <summary>
+            Gets or Sets the start character.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.ICodabarProperties.StopCharacter">
+            <summary>
+            Gets or Sets the stop character.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.CodabarProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.CodabarProps.StartCharacter">
+            <summary>
+            Gets or Sets the start character.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.CodabarProps.StopCharacter">
+            <summary>
+            Gets or Sets the stop character.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.CodabarProps.StartStopCharacterEnum">
+            <summary>
+            Specifies the start and stop character for Codabar symbology.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.DataMatrixProps">
+            <summary>
+            Available properties for DataMatrix Barcode Symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IDataMatrixProperties">
+            <summary>
+            Interface for DataMatrix properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IDataMatrixProperties.EncodingType">
+            <summary>
+            Gets or Sets the encoding to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IDataMatrixProperties.FormatType">
+            <summary>
+            Gets or Sets the format to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IDataMatrixProperties.ModuleSize">
+            <summary>
+            Gets or Sets the module size.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IDataMatrixProperties.ProcessTilde">
+            <summary>
+            Gets or Sets whether tilde character should be processed
+            when DataMatrix code is being generated.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.DataMatrixProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.DataMatrixProps.EncodingType">
+            <summary>
+            Gets or Sets the encoding to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.DataMatrixProps.FormatType">
+            <summary>
+            Gets or Sets the format to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.DataMatrixProps.ModuleSize">
+            <summary>
+            Gets or Sets the module size.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.DataMatrixProps.ProcessTilde">
+            <summary>
+            Gets or Sets whether tilde character should be processed
+            when DataMatrix code is being generated.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.DataMatrixProps.EncodingTypeEnum">
+            <summary>
+            Specifies the DataMatrix Encoding to use.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.DataMatrixProps.EncodingTypeEnum.Ascii">
+            <summary>
+            Used to encode data that mainly contains ASCII characters (0-127)
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.DataMatrixProps.EncodingTypeEnum.C40">
+            <summary>
+            Used to encode data that mainly contains numeric and upper case characters
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.DataMatrixProps.EncodingTypeEnum.Text">
+            <summary>
+            Used to encode data that mainly contains numeric and lower case characters
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.DataMatrixProps.EncodingTypeEnum.Base256">
+            <summary>
+            Used to encode 8 bit values
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.DataMatrixProps.FormatTypeEnum">
+            <summary>
+            Specifies the DataMatrix Format to use.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.PharmacodeProps">
+            <summary>
+            Available properties for Pharmacode Barcode Symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IPharmacodeProperties">
+            <summary>
+            Interface for Pharmacode properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPharmacodeProperties.BarSpacing">
+            <summary>
+            Gets or Sets the gap between Pharmacode bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPharmacodeProperties.ThickBarWidth">
+            <summary>
+            Gets or Sets the width of Pharmacode thick bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPharmacodeProperties.ThinBarWidth">
+            <summary>
+            Gets or Sets the width of Pharmacode thin bars.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.PharmacodeProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PharmacodeProps.BarSpacing">
+            <summary>
+            Gets or Sets the gap between Pharmacode bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PharmacodeProps.ThickBarWidth">
+            <summary>
+            Gets or Sets the width of Pharmacode thick bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PharmacodeProps.ThinBarWidth">
+            <summary>
+            Gets or Sets the width of Pharmacode thin bars.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.PlanetProps">
+            <summary>
+            Available properties for Planet Barcode Symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IPlanetProperties">
+            <summary>
+            Interface for Planet properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPlanetProperties.ShortBarHeight">
+            <summary>
+            Gets or Sets the short bars' height.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPlanetProperties.TallBarHeight">
+            <summary>
+            Gets or Sets the tall bars' height.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.PlanetProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PlanetProps.ShortBarHeight">
+            <summary>
+            Gets or Sets the short bars' height.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PlanetProps.TallBarHeight">
+            <summary>
+            Gets or Sets the tall bars' height.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.PostalStateProps">
+            <summary>
+            Available properties for PostalState Barcode Symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IPostalStateProperties">
+            <summary>
+            Interface for PostalState properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPostalStateProperties.AddStartStopCharacters">
+            <summary>
+            Gets or Sets whether start and stop characters must be added
+            and drawn in the barcode image.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPostalStateProperties.BarSpacing">
+            <summary>
+            Gets or Sets gap spacing between bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPostalStateProperties.TrackerBarHeight">
+            <summary>
+            Gets or Sets the tracker bar's height.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPostalStateProperties.TrackerBarWidth">
+            <summary>
+            Gets or Sets the tracker bar's width.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.PostalStateProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PostalStateProps.AddStartStopCharacters">
+            <summary>
+            Gets or Sets whether start and stop characters must be added
+            and drawn in the barcode image.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PostalStateProps.BarSpacing">
+            <summary>
+            Gets or Sets gap spacing between bars.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PostalStateProps.TrackerBarHeight">
+            <summary>
+            Gets or Sets the tracker bar's height.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PostalStateProps.TrackerBarWidth">
+            <summary>
+            Gets or Sets the tracker bar's width.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.PostnetProps">
+            <summary>
+            Available properties for Postnet Barcode Symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IPostnetProperties">
+            <summary>
+            Interface for Postnet properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPostnetProperties.ShortBarHeight">
+            <summary>
+            Gets or Sets the short bar's height.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IPostnetProperties.TallBarHeight">
+            <summary>
+            Gets or Sets the tall bar's height.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.PostnetProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PostnetProps.ShortBarHeight">
+            <summary>
+            Gets or Sets the short bar's height.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.PostnetProps.TallBarHeight">
+            <summary>
+            Gets or Sets the tall bar's height.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.QRCodeProps">
+            <summary>
+            Available properties for QRCode Barcode Symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IQRCodeProperties">
+            <summary>
+            Interface for QRCode properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IQRCodeProperties.CodeVersion">
+            <summary>
+            Gets or Sets the code version to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IQRCodeProperties.EncodingType">
+            <summary>
+            Gets or Sets the encoding type to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IQRCodeProperties.ErrorCorrectionLevel">
+            <summary>
+            Gets or Sets the error correction level to apply.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IQRCodeProperties.ModuleSize">
+            <summary>
+            Gets or Sets the module size.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IQRCodeProperties.EncodingName">
+            <summary>
+            Get or set the encoding name (code page) to
+            be used for QR Code Byte compaction mode.
+            Default is IS0-8859-1.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.QRCodeProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.QRCodeProps.EncodingType">
+            <summary>
+            Gets or Sets the encoding type to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.QRCodeProps.ErrorCorrectionLevel">
+            <summary>
+            Gets or Sets the error correction level to apply.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.QRCodeProps.ModuleSize">
+            <summary>
+            Gets or Sets the module size.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.QRCodeProps.CodeVersion">
+            <summary>
+            Gets or Sets the code version to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.QRCodeProps.EncodingName">
+            <summary>
+            Get or set the encoding name (code page) to
+            be used for QR Code Byte compaction mode.
+            Default is IS0-8859-1.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.QRCodeProps.QREncodingTypeEnum">
+            <summary>
+            Specifies the QR Code Encoding to use on that symbology.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.QRCodeProps.QREncodingTypeEnum.Auto">
+            <summary>
+            Attempt to determine encoding type automatically
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.QRCodeProps.QREncodingTypeEnum.Numeric">
+            <summary>
+            Used to encode data that mainly contains numeric characters
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.QRCodeProps.QREncodingTypeEnum.AlphaNumeric">
+            <summary>
+            Used to encode data that mainly contains alphanumeric characters
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.QRCodeProps.QREncodingTypeEnum.Kanji">
+            <summary>
+            Used to encode data that mainly contains Kanji characters
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.QRCodeProps.QREncodingTypeEnum.Byte">
+            <summary>
+            Used to encode 8 bit values
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.QRCodeProps.ErrorCorrectionLevelEnum">
+            <summary>
+            Specifies the Error Correction Level to apply for QR Code symbology.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.QRCodeProps.ErrorCorrectionLevelEnum.L">
+            <summary>
+            Approx. 7% of codewords can be restored. Error correction level L is appropriate
+            for high symbol quality and/or the need for the smallest possible symbol.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.QRCodeProps.ErrorCorrectionLevelEnum.M">
+            <summary>
+            Approx. 15% of codewords can be restored. Level M is described as Standard
+            level and offers a good compromise between small size and increased reliability.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.QRCodeProps.ErrorCorrectionLevelEnum.Q">
+            <summary>
+            Approx. 25% of codewords can be restored. Level Q is a High reliability level
+            and suitable for more critical or poor print quality applications.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.QRCodeProps.ErrorCorrectionLevelEnum.H">
+            <summary>
+            Approx. 30% of codewords can be restored. Level H offers the maximum achievable
+            reliability.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.QRCodeProps.CodeVersionTypeEnum">
+            <summary>
+            Specifies the QR Code Version to use on that symbology. Version 1 (21 x 21
+            modules) to Version 40 (177 x 177 modules) increasing in steps of four modules
+            per side.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.USPSProps">
+            <summary>
+            Available properties for USPS symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IUSPSProperties">
+            <summary>
+            Interface for USPS properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IUSPSProperties.FIMPattern">
+            <summary>
+            Gets or Sets the facing identification mark (FIM) pattern to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IUSPSProperties.HorizontalBarsCount">
+            <summary>
+            Gets or Sets the number of horizontal bars to be drawn.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.USPSProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.USPSProps.FIMPattern">
+            <summary>
+            Gets or Sets the facing identification mark (FIM) pattern to use.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.USPSProps.HorizontalBarsCount">
+            <summary>
+            Gets or Sets the number of horizontal bars to be drawn.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.USPSProps.FIMTypeEnum">
+            <summary>
+            Specifies the facing identification mark (FIM) pattern to use.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.USPSProps.FIMTypeEnum.A">
+            <summary>
+            Used for Courtesy Reply Mail (CRM) and Meter Reply Mail (MRM) with a preprinted
+            barcode.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.USPSProps.FIMTypeEnum.B">
+            <summary>
+            Used for Business Reply Mail (BRM) without a preprinted BRM ZIP+4 barcode.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.USPSProps.FIMTypeEnum.C">
+            <summary>
+            Used for Business Reply Mail (BRM) with a preprinted BRM ZIP+4 barcode.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.USPSProps.FIMTypeEnum.D">
+            <summary>
+            Used only with information based indicia (IBI) postage.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.TelepenProps">
+            <summary>
+            Properties available for Telepen symbology
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ITelepenProperties">
+            <summary>
+            Interface for Telepen properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.ITelepenProperties.EncodingType">
+            <summary>
+            Gets or Sets the encoding type to use.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.TelepenProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.TelepenProps.EncodingType">
+            <summary>
+            Gets or Sets the encoding type to use.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.TelepenProps.EncodingTypeEnum">
+            <summary>
+            Specifies the Telepen Encoding to use on that symbology.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.TelepenProps.EncodingTypeEnum.Ascii">
+            <summary>
+            Used to encode the full range of ASCII characters
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.TelepenProps.EncodingTypeEnum.Numeric">
+            <summary>
+            Used to encode pairs of numeric characters in double-density mode.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.BarcodeMarginProps">
+            <summary>
+            Margin information class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IBarcodeMargin">
+            <summary>
+            Interface for Barcode Margin class.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.IBarcodeMargin.SetMargins(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Sets a separate margin size for each edge.
+            </summary>
+            <param name="left">The margin size for the left edge.</param>
+            <param name="top">The margin size for the top edge.</param>
+            <param name="right">The margin size for the right edge.</param>
+            <param name="bottom">The margin size for the bottom edge.</param>
+        </member>
+        <member name="P:ZMTGraphics.IBarcodeMargin.SetAll">
+            <summary>
+            Sets the margin size for all edges.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcodeMargin.Bottom">
+            <summary>
+            Gets or sets the margin size for the bottom edge.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcodeMargin.Left">
+            <summary>
+            Gets or sets the margin size for the left edge.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcodeMargin.Right">
+            <summary>
+            Gets or sets the margin for the right edge.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBarcodeMargin.Top">
+            <summary>
+            Gets or sets the margin size for the top edge.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BarcodeMarginProps.margin">
+            <summary>
+            Margin information
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.BarcodeMarginProps.#ctor">
+            <summary>
+            Default constructor for BarcodeMargin class.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.BarcodeMarginProps.SetMargins(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Sets a separate margin size for each edge.
+            </summary>
+            <param name="left">The margin size for the left edge.</param>
+            <param name="top">The margin size for the top edge.</param>
+            <param name="right">The margin size for the right edge.</param>
+            <param name="bottom">The margin size for the bottom edge.</param>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeMarginProps.SetAll">
+            <summary>
+            Sets the margin size for all edges.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeMarginProps.Bottom">
+            <summary>
+            Gets or sets the margin size for the bottom edge.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeMarginProps.Left">
+            <summary>
+            Gets or sets the margin size for the left edge.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeMarginProps.Right">
+            <summary>
+            Gets or sets the margin for the right edge.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BarcodeMarginProps.Top">
+            <summary>
+            Gets or sets the margin size for the top edge.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Code128Props">
+            <summary>
+            Code128 properties class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ICode128Properties">
+            <summary>
+            Interface for Code128 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.ICode128Properties.CharacterSet">
+            <summary>
+            Get or set the character set to use in the Code128
+            barcode symbology.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.Code128Props.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Code128Props.CharacterSet">
+            <summary>
+            Get or set the character set to use in the Code128
+            barcode symbology.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Code128Props.CharacterSetEnum">
+            <summary>
+            Specifies the characters set to use in the Code 128 symbology.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Code128Props.CharacterSetEnum.Auto">
+            <summary>
+            Automatically switch between code sets to encode
+            the ASCII values.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Code128Props.CharacterSetEnum.A">
+            <summary>
+            Utilize Char Set A which only supports ASCII values from 0 to 95
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Code128Props.CharacterSetEnum.B">
+            <summary>
+            Utilize Char Set B which only supports ASCII values
+            from 32 to 127
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Code128Props.CharacterSetEnum.C">
+            <summary>
+            Utilize Char Set C which only supports pairs of digits
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Code16kProps">
+            <summary>
+            Code128 properties class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ICode16kProperties">
+            <summary>
+            Interface for Code128 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.ICode16kProperties.Mode">
+            <summary>
+            Get or set the mode set to use for Code16k
+            barcode symbology.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.Code16kProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Code16kProps.Mode">
+            <summary>
+            Get or set the mode set to use for Code16k
+            barcode symbology.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Code16kProps.ModeEnum">
+            <summary>
+            Specifies the mode to use for Code16k symbology.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Code16kProps.ModeEnum.Mode0">
+            <summary>
+            Utilize the Code 128 Char Set A which only supports
+             ASCII values from 0 to 95
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Code16kProps.ModeEnum.Mode1">
+            <summary>
+            Utilize the Code 128 Char Set B which only supports
+            values from 32 to 127
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Code16kProps.ModeEnum.Mode2">
+            <summary>
+            Utilize the Code 128 Char Set C which only supports
+            pairs of digits
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Code39And93Props">
+            <summary>
+            Code39 and Code93 properties class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.ICode39And93Properties">
+            <summary>
+            Interface for Code39 and Code93 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.ICode39And93Properties.Extended">
+            <summary>
+            Get or set whether the extended versions for
+            Code39 and/or Code93 must be used.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.Code39And93Props.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Code39And93Props.Extended">
+            <summary>
+            Get or set whether the extended versions for
+            Code39 and/or Code93 must be used.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Isbt128Props">
+            <summary>
+            ISBT 128 Properties class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IIsbt128Properties">
+            <summary>
+            Interface for ISBT 128 properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IIsbt128Properties.DataStructure">
+            <summary>
+            Get or set the ISBT 128 data structure to use.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.Isbt128Props.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.Isbt128Props.DataStructure">
+            <summary>
+            Get or set the ISBT 128 data structure to use.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum">
+            <summary>
+            Specifies the ISBT 128 Data Structures.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS001">
+            <summary>
+            Donation Identification Number
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS002">
+            <summary>
+            Blood Groups (ABO and RhD)
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS003">
+            <summary>
+            Product Code
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS004">
+            <summary>
+            Expiration Date
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS005">
+            <summary>
+            Expiration Date and Time
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS006">
+            <summary>
+            Collection Date
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS007">
+            <summary>
+            Collection Date and Time
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS008">
+            <summary>
+            Production Date
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS009">
+            <summary>
+            Production Date and Time
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS010">
+            <summary>
+            Special Testing: General
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS011">
+            <summary>
+            Special Testing: Red Blood Cell Antigens (withdrawn)
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS012">
+            <summary>
+            Special Testing: Red Blood Cell Antigens - General
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS013">
+            <summary>
+            Special Testing: Red Blood Cell Antigens - Finnish
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS014">
+            <summary>
+            Special Testing: Platelet HLA and Platelet-Specific Antigens
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS015">
+            <summary>
+            Special Testing: HLA-A and -B Alleles
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS016">
+            <summary>
+            Special Testing: HLA-DRB1 Alleles
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS017">
+            <summary>
+            Container Manufacturer and Catalog Number
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS018">
+            <summary>
+            Container Lot Number
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS019">
+            <summary>
+            Donor Identification Number
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS020">
+            <summary>
+            Staff Member Identification Number
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS021">
+            <summary>
+            Manufacturer and Catalog Number: Items Other Than Containers
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS022">
+            <summary>
+            Lot Number: Items Other Than Containers
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS023">
+            <summary>
+            Compound Message
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS024">
+            <summary>
+            Patient Date of Birth
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS025">
+            <summary>
+            Patient Hospital Identification Number
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.Isbt128Props.DataStructureEnum.DS026">
+            <summary>
+            Expiration Month and Year
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.MaxiCodeProps">
+            <summary>
+            MaxiCode properties class.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IMaxiCodeProperties">
+            <summary>
+            Interface for MaxiCode properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IMaxiCodeProperties.Mode">
+            <summary>
+            Get or set MaxiCode mode.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IMaxiCodeProperties.ProcessTilde">
+            <summary>
+            Get or set whether the tilde character should
+            be processed when MaxiCode is being generated.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IMaxiCodeProperties.SymbolCount">
+            <summary>
+            Get or set the number of MaxiCode symbols in
+            a structured appended format.  Must be less than 
+            or equal to 8.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IMaxiCodeProperties.SymbolIndex">
+            <summary>
+            Get or set the symbol index for a structured appended
+            MaxiCode.  Value must be 1 to 8 and must be less than
+            the value in the SymbolCount property.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.MaxiCodeProps.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.MaxiCodeProps.Mode">
+            <summary>
+            Get or set MaxiCode mode.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.MaxiCodeProps.ProcessTilde">
+            <summary>
+            Get or set whether the tilde character should
+            be processed when MaxiCode is being generated.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.MaxiCodeProps.SymbolCount">
+            <summary>
+            Get or set the number of MaxiCode symbols in
+            a structured appended format.  Must be less than 
+            or equal to 8.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.MaxiCodeProps.SymbolIndex">
+            <summary>
+            Get or set the symbol index for a structured appended
+            MaxiCode.  Value must be 1 to 8 and must be less than
+            the value in the SymbolCount property.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.MaxiCodeProps.ModeEnum">
+            <summary>
+            Specifies the MaxiCode modes.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.MaxiCodeProps.ModeEnum.Mode2">
+            <summary>
+            Indicates the symbol contains a Structured Carrier Message with a numeric
+            postal code (U.S.).
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.MaxiCodeProps.ModeEnum.Mode3">
+            <summary>
+            Indicates the symbol contains a Structured Carrier Message with an alphanumeric
+            postal code (non-U.S.).
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.MaxiCodeProps.ModeEnum.Mode4">
+            <summary>
+            Indicates the symbol contains general-purpose data, protected by the standard
+            error correction.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.MaxiCodeProps.ModeEnum.Mode5">
+            <summary>
+            Indicates the symbol contains general-purpose data, protected by enhanced
+            error correction (EEC).
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.MaxiCodeProps.ModeEnum.Mode6">
+            <summary>
+            Reserved for symbols used to program internal parameters of MaxiCode readers.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.MicroQRProps">
+            <summary>
+            MicroQR properties class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IMicroQRProperties">
+            <summary>
+            Interface for MicroQR properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IMicroQRProperties.CodeVersion">
+            <summary>
+            Get or set the code version to be used.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.MicroQRProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.MicroQRProps.CodeVersion">
+            <summary>
+            Get or set the code version to be used.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.MicroQRProps.CodeVersionEnum">
+            <summary>
+            Specifies the Micro QR Code Version to use on that symbology. Version M1
+            (11 x 11 modules) to Version M4 (17 x 17 modules) increasing in steps of
+            two modules per side.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.MSIProps">
+            <summary>
+            MSI properties class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IMSIProperties">
+            <summary>
+            Interface for MSI properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IMSIProperties.Checksum">
+            <summary>
+            Get or set the checksum to be used.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.MSIProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.MSIProps.Checksum">
+            <summary>
+            Get or set the checksum to be used.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.MSIProps.ChecksumEnum">
+            <summary>
+            Specifies the checksum method used for MSI barcodes
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.GS1DataBarAndRSSExpandedStackedProps">
+            <summary>
+            GS1 DataBar Expanded Stacked and RSS Expanded Stacked properties class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IGS1DataBarAndRSSExpandedStackedProperties">
+            <summary>
+            Interface for QRCode properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IGS1DataBarAndRSSExpandedStackedProperties.SegmentsPerRow">
+            <summary>
+            Get or set the number of segments per row to
+            be used in GS1 DataBar Expanded Stacked or RSS
+            Expanded Stacked symbologies.  Must be an even 
+            number from 2 to 22, default is 4.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.GS1DataBarAndRSSExpandedStackedProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.GS1DataBarAndRSSExpandedStackedProps.SegmentsPerRow">
+            <summary>
+            Get or set the number of segments per row to
+            be used in GS1 DataBar Expanded Stacked or RSS
+            Expanded Stacked symbologies.  Must be an even 
+            number from 2 to 22, default is 4.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.BearerBarProps">
+            <summary>
+            Bearer Bar properties class
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.IBearerBarProperties">
+            <summary>
+            Interface for Bearer Bar properties class
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBearerBarProperties.Style">
+            <summary>
+            Get or set the bearer bars type to be drawn with
+            the barcode image.  Bearer Bar Style only available
+            for 2 of 5, Code 128, and UCC.EAN 128 barcodes.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.IBearerBarProperties.Width">
+            <summary>
+            Get or set the bearer bars width.
+            </summary>
+        </member>
+        <member name="M:ZMTGraphics.Barcode.BearerBarProps.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BearerBarProps.Style">
+            <summary>
+            Get or set the bearer bars type to be drawn with
+            the barcode image.  Bearer Bar Style only available
+            for 2 of 5, Code 128, and UCC.EAN 128 barcodes.
+            </summary>
+        </member>
+        <member name="P:ZMTGraphics.Barcode.BearerBarProps.Width">
+            <summary>
+            Get or set the bearer bars width.
+            </summary>
+        </member>
+        <member name="T:ZMTGraphics.Barcode.BearerBarProps.StyleEnum">
+            <summary>
+            Specifies the bearer bars' type that must be drawn with the barcode image.
+            Bearer bar is only available for 2 of 5, Code 128 and UCC.EAN 128 barcodes.
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BearerBarProps.StyleEnum.None">
+            <summary>
+            No bearer bars are drawn on the barcode
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BearerBarProps.StyleEnum.Frame">
+            <summary>
+            The bearer bars are drawn surrounding the symbol
+            </summary>
+        </member>
+        <member name="F:ZMTGraphics.Barcode.BearerBarProps.StyleEnum.HorizontalRules">
+            <summary>
+            The bearer bars are drawn at the top and bottom on the symbol
+            </summary>
+        </member>
+    </members>
+</doc>
